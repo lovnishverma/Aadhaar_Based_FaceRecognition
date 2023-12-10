@@ -13,7 +13,7 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="collapsed"
 )
-st.title("Attendance System Using Face Recognition 📷")
+st.title("Aadhaar-Based Face Recognition Attendance System 📷")
 st.markdown("This app recognizes faces in an image, verifies Aadhaar card details, and updates attendance records with the current timestamp.")
 
 # Load images for face recognition
@@ -30,7 +30,7 @@ for cls in myList:
         curImg = cv2.imread(img_path)
         Images.append(curImg)
         classnames.append(os.path.splitext(cls)[0])
-        # Assume Aadhaar number is part of the image filename (e.g., "123456_john.jpg")
+        # Assume Aadhaar number is part of the image filename (e.g., "123456_Sarwan.jpg")
         aadhar_numbers.append(cls.split('_')[0])
 
 # Function to validate Aadhaar card number
@@ -121,7 +121,7 @@ if img_file_buffer is not None:
                 if aadhar_index is not None:
                     st.success(f"Match found: {classnames[aadhar_index]}")
                 else:
-                    st.warning("Face not detected, and Aadhaar number not found in the database.")
+                    st.warning("Attendance Not Updated, Aadhaar number not found in the database.")
             else:
                 st.success(f"Face recognized: {name}")
 
