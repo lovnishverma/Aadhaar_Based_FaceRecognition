@@ -103,8 +103,8 @@ if img_file_buffer is not None:
                         match_found = True  # Set the flag to True
                     
                 else:
-                    # Face recognized, but not matched with Aadhaar number
-                    st.error("Face recognized, but Aadhaar number does not match.")
+                    # Face detected, but not matched with Aadhaar number
+                    st.error("Face or Aadhaar number does not match.")
 
                 y1, x2, y2, x1 = faceLoc
                 y1, x2, y2, x1 = y1 * 4, x2 * 4, y2 * 4, x1 * 4
